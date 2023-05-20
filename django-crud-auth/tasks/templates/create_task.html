@@ -3,9 +3,11 @@
 {% block content %}
     <h1>Create Task</h1>
 
-    <form action="/task/create/" method="POST">
+    {{ error }}
+
+    <form action="/tasks/create/" method="POST">
         {% csrf_token %}
-        {{ form }}
+        {{ form.as_p }}
         <button>Save</button>
     </form>
 
